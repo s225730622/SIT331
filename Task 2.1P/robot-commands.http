@@ -1,0 +1,40 @@
+GET http://localhost:5214/robot-commands
+
+###
+GET http://localhost:5214/robot-commands/move
+
+###
+GET http://localhost:5214/robot-commands/3
+
+###
+POST http://localhost:5214/robot-commands/
+Content-Type: application/json
+
+{
+    "command": "BACK"
+}
+
+###
+PUT http://localhost:5214/robot-commands/5
+Content-Type: application/json
+
+{
+    "command": "TURNAROUND"
+}
+
+###
+GET http://localhost:5214/robot-map
+
+###
+GET http://localhost:5214/robot-map/5-8
+
+###
+GET http://localhost:5214/robot-map/9-6
+
+###
+PUT http://localhost:5214/robot-map
+Content-Type: application/json
+
+{
+    "mapSize": 50
+}
