@@ -1,12 +1,16 @@
+// Get all robot commands
 GET http://localhost:5214/robot-commands
 
 ###
+// Get all commands which move the robot
 GET http://localhost:5214/robot-commands/move
 
 ###
-GET http://localhost:5214/robot-commands/3
+// Get the robot command by ID as below
+GET http://localhost:5214/robot-commands/4
 
 ###
+// Add a new robot command as below
 POST http://localhost:5214/robot-commands/
 Content-Type: application/json
 
@@ -15,7 +19,8 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5214/robot-commands/5
+// Update an existing robot command to the below command
+PUT http://localhost:5214/robot-commands/4
 Content-Type: application/json
 
 {
@@ -23,18 +28,22 @@ Content-Type: application/json
 }
 
 ###
+// Get robot map
 GET http://localhost:5214/robot-map
 
 ###
+// Get coordinates from robot map and return true if they belong to the map, otherwise false (true return test)
 GET http://localhost:5214/robot-map/5-8
 
 ###
+// Get coordinates from robot map and return true if they belong to the map, otherwise false (false return test)
 GET http://localhost:5214/robot-map/9-6
 
 ###
+// Update the robot map size to the below
 PUT http://localhost:5214/robot-map
 Content-Type: application/json
 
 {
-    "mapSize": 50
+    "mapSize": 90
 }
