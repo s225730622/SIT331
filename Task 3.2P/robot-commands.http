@@ -1,1 +1,86 @@
-GET https://localhost:7166/api/robot-commands
+    //       --- ROBOT COMMANDS ---       //   
+
+// Gets all robot commands
+GET http://localhost:5190/api/robot-commands
+
+###
+// Gets all commands that move the robot
+GET http://localhost:5190/api/robot-commands/move
+
+###
+// Gets all robot commands by a specific Id
+GET http://localhost:5190/api/robot-commands/4
+
+###
+// Adds a new command
+POST http://localhost:5190/api/robot-commands
+Content-Type: application/json
+
+{
+    "isMoveCommand": false,
+    "name": "BLINK"
+}
+
+###
+// Updates an existing command
+PUT http://localhost:5190/api/robot-commands/3
+Content-Type: application/json
+
+{
+    "id": 5,
+    "name": "TURNAROUND",
+    "isMoveCommand": false,  
+    "description": "Turn robot around 180°."
+}
+
+###
+// Deletes a command by Id
+DELETE http://localhost:5190/api/robot-commands/6
+
+
+//------------------------------------------------
+    //       --- MAP COMMANDS ---       //  
+###
+
+// Gets all maps
+GET http://localhost:5190/api/maps
+
+###
+// Gets all maps that are square
+GET http://localhost:5190/api/maps/square
+
+###
+// Gets all maps by a specific Id
+GET http://localhost:5190/api/maps/2
+
+###
+// Adds a new map
+POST http://localhost:5190/api/maps
+Content-Type: application/json
+
+{
+    "columns": 0,
+    "rows": 0,
+    "name": "HOOP"
+}
+
+###
+// Updates an existing map
+PUT http://localhost:5190/api/maps/3
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "BURWOOD",
+    "Columns": 33,  
+    "Rows": 33
+}
+
+###
+// Deletes a map by Id
+DELETE http://localhost:5190/api/maps/5
+
+###
+// Gets columns and rows to make coordinates on a map
+GET http://localhost:5190/api/maps/1/-2-2
+
